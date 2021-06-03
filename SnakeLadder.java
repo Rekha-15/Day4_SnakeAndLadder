@@ -4,12 +4,11 @@ public class SnakeLadder
 {
 	public static void main(String args[])
 	{
-
 		System.out.println("Welcome to Snake And Ladder Program");
 		{
 			int random_number = 0;
-			int firstSnake_Position = 20;
-			int secondSnake_Position = 68;
+			int firstSnake_Position = 25;
+			int secondSnake_Position = 78;
 			while(random_number < 100)
 			{
 				int random_Check = (int)Math.floor(Math.random() * 10) % 6;
