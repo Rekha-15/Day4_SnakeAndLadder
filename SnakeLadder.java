@@ -7,13 +7,14 @@ public class SnakeLadder
 
 		System.out.println("Welcome to Snake And Ladder Program");
 		{
-			int random_check = (int)Math.floor(Math.random() * 10) % 7;
-				
-					if(random_check != 0)
-					{
-						System.out.println("The player dice number is : " + random_check);
-					}
-				}
+			int single_player = 0;
+			System.out.println("Game Starts at: " + single_player);
+			int random = (int)Math.floor(Math.random() * 10) & 6;
+			if(random != 0)
+			{
+				single_player = single_player + random ;
+				System.out.println("player moved to " + single_player);
 			}
+		}
+	}
 }
-		
