@@ -6,35 +6,44 @@ public class SnakeLadder
 	{
 		System.out.println("Welcome to Snake And Ladder Program");
 		{
-			int dies_Count = 0;
-			int snake_Position1 = 33;
-			int snake_Position2 = 88;
-			int random_number = 0;
-			while(random_number < 100)
-			{
-			 int random_Check = (int)Math.floor(Math.random() * 10) % 6;
-			 if(random_Check != 0)
+			int player_Position1 = 0;
+			 int player_Position2 = 0;
+			 int snake_Position = 30;
+			 while(player_Position1 < 100)
 			 {
-			 	random_number = random_number + random_Check;
-				dies_Count = dies_Count + 1;
-			 }
-			 if(random_number == snake_Position1)
-			 {
-				 random_number = 0;
-				 System.out.println("My Dies meets the snakes position and Moved to " + random_number);
-			 }
-			 else if(random_number == snake_Position2)
-			 {
-				 random_number = 0;
-				 System.out.println("My Dies meets the snakes position and Moved to " + random_number);
-			 }
-			 
-			 if(random_Check != 0)
-			 {
-			 	System.out.println("Dies Got a Number " + random_Check + " Moved to the Position " + random_number);
-			 }
-			 System.out.println("Number of Counts " + dies_Count);		 
+				  int random_Check1 = (int)Math.floor(Math.random() * 10) % 6;
+				  int random_Check2 = (int)Math.floor(Math.random() * 10) % 6;
+				  if(random_Check1 != 0 || random_Check2 != 0)
+				  { 
+					   player_Position1 = player_Position1 + random_Check1;
+					   player_Position2 = player_Position2 + random_Check2;
+					   if(player_Position1 == snake_Position)
+					   { 
+					   	  System.out.println("First Person's Dies meet the Snake position so he need to move in backward direction ");
+						  player_Position1 = 0;
+					   }
+					   else if(player_Position2 == snake_Position)
+					   {
+						   System.out.println("First Person's Dies meet the Snake position so he need to move in backward direction ");
+						   player_Position2 = 0;
+					   }
+				  }
+					if(random_Check1 != 0 || random_Check2 != 0)
+					{
+						System.out.println("First Person move :" + player_Position1);
+						System.out.println("Second Person move :" + player_Position2);
+					}
+					if(player_Position1 >= 100)
+					{	
+						System.out.println("First Person Won yhe Game.............");
+						break;
+					}
+					if(player_Position2 >= 100)
+					{
+						System.out.println("Second Person Won the Game.............");
+						break;
+					}
+				}
 			}
-		}
-	}		
+		}  
 }
